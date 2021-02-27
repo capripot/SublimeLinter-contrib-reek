@@ -22,9 +22,12 @@ class Reek(RubyLinter):
     defaults = {
         'selector': 'source.ruby - text.html - text.haml'
     }
-    cmd = ('ruby', '-S', 'reek')
-    regex = r'^.+?\[(?P<line>\d+).*\]:(?P<message>.+) \[.*\]'
+
+    cmd = ('ruby', '-S', 'reek', '-s', '--no-color',
+           '--no-progress', '--no-documentation', '${temp_file}')
+    regex = r'^.+?:(?P<line>\d+): (?P<error>\w+): (?P<message>.+)$'
     tempfile_suffix = 'rb'
+    config_file = ('-c', '.reek.yml')
 
 
     def split_match(self, match):
