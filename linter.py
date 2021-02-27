@@ -13,9 +13,6 @@
 from SublimeLinter.lint import RubyLinter, util
 import re
 
-
-# SublimeLinter: WARNING: reek: Implicit appending a filename to `cmd` has been deprecated, add '${temp_file}' explicitly.
-
 class Reek(RubyLinter):
     """Provides an interface to reek."""
 
