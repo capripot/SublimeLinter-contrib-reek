@@ -13,18 +13,18 @@
 from SublimeLinter.lint import RubyLinter, util
 import re
 
-
-# SublimeLinter: WARNING: reek: Implicit appending a filename to `cmd` has been deprecated, add '${temp_file}' explicitly.
-
 class Reek(RubyLinter):
     """Provides an interface to reek."""
 
     defaults = {
         'selector': 'source.ruby - text.html - text.haml'
     }
-    cmd = ('ruby', '-S', 'reek')
-    regex = r'^.+?\[(?P<line>\d+).*\]:(?P<message>.+) \[.*\]'
+
+    cmd = ('ruby', '-S', 'reek', '-s', '--no-color',
+           '--no-progress', '--no-documentation', '${temp_file}')
+    regex = r'^.+?:(?P<line>\d+): (?P<error>\w+): (?P<message>.+)$'
     tempfile_suffix = 'rb'
+    config_file = ('-c', '.reek.yml')
 
 
     def split_match(self, match):
