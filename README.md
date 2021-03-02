@@ -3,7 +3,7 @@ SublimeLinter-contrib-reek
 
 ***This is a fork, updated for SublimeLinter 4 and reek 5***
 
-[![Build Status](https://travis-ci.org/capripot/SublimeLinter-contrib-reek.svg?branch=master)](https://travis-ci.org/capripot/SublimeLinter-contrib-reek)
+[![Build Status](https://travis-ci.com/capripot/SublimeLinter-contrib-reek.svg?branch=master)](https://travis-ci.com/capripot/SublimeLinter-contrib-reek)
 
 This linter plugin for [SublimeLinter][docs] provides an interface to [reek](https://github.com/troessner/reek). It will be used with files that have the `ruby`, `ruby on rails`, `rspec`, `betterruby`, `better rspec`, `ruby experimental` or `cucumber steps` syntaxes.
 
