@@ -20,7 +20,7 @@ Before using this plugin, you must ensure that `reek` is installed on your syste
    [sudo] gem install reek
    ```
 
-1. If you are using `rbenv` or `rvm`, ensure that they are loaded in your [shell’s correct startup file][https://sublimelinter.readthedocs.io/en/latest/troubleshooting.html].
+1. If you are using `rbenv` or `rvm`, ensure that they are loaded in your [shell’s correct startup file](https://sublimelinter.readthedocs.io/en/latest/troubleshooting.html).
   **Note:** This plugin requires `reek` 5 or later.
 
 1. To install this particular fork:
