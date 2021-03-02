@@ -10,8 +10,9 @@
 
 """This module exports the Reek plugin class."""
 
-from SublimeLinter.lint import RubyLinter, util
+from SublimeLinter.lint import RubyLinter
 import re
+
 
 class Reek(RubyLinter):
     """Provides an interface to reek."""
@@ -21,19 +22,18 @@ class Reek(RubyLinter):
     }
 
     cmd = ('ruby', '-S', 'reek', '-s', '--no-color',
-           '--no-progress', '--no-documentation', '${temp_file}')
+           '--no-progress', '--no-documentation', '${file}')
     regex = r'^.+?:(?P<line>\d+): (?P<error>\w+): (?P<message>.+)$'
     tempfile_suffix = 'rb'
-    config_file = ('-c', '.reek.yml')
 
 
     def split_match(self, match):
-        """Extract named capture groups from the regex and return them as a tuple."""
+        """Add near detail to error dict"""
 
-        match, line, col, error, warning, message, _ = super().split_match(match)
-        near = self.search_token(message)
+        error = super().split_match(match)
+        error['near'] = self.search_token(error['message'])
 
-        return match, line, col, error, warning, message, near
+        return error
 
     def search_token(self, message):
         """Search text token to be highlighted."""
