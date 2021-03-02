@@ -3,7 +3,7 @@ SublimeLinter-contrib-reek
 
 ***This is a fork, updated for SublimeLinter 4 and reek 5***
 
-[![Build Status](https://travis-ci.org/codequest-eu/SublimeLinter-contrib-reek.svg?branch=master)](https://travis-ci.org/codequest-eu/SublimeLinter-contrib-reek)
+[![Build Status](https://travis-ci.org/capripot/SublimeLinter-contrib-reek.svg?branch=master)](https://travis-ci.org/capripot/SublimeLinter-contrib-reek)
 
 This linter plugin for [SublimeLinter][docs] provides an interface to [reek](https://github.com/troessner/reek). It will be used with files that have the `ruby`, `ruby on rails`, `rspec`, `betterruby`, `better rspec`, `ruby experimental` or `cucumber steps` syntaxes.
 
@@ -17,7 +17,7 @@ Before using this plugin, you must ensure that `reek` is installed on your syste
 
 1. Install `reek` by typing the following in a terminal:
    ```
-   [sudo] gem install reek
+   gem install reek
    ```
 
 1. If you are using `rbenv` or `rvm`, ensure that they are loaded in your [shell’s correct startup file](https://sublimelinter.readthedocs.io/en/latest/troubleshooting.html).
@@ -26,7 +26,7 @@ Before using this plugin, you must ensure that `reek` is installed on your syste
 1. To install this particular fork:
   - Remove installed version of `SublimeLinter-contrib-reek`
     - Use Package Control `Remove Package` command
-  - Add this reppo to Package Control  repositories 
+  - Add this reppo to Package Control  repositories
     - Use Package Control `Add Repository` command (see this [Stack Overflow][add_repo_so]): `https://github.com/capripot/SublimeLinter-contrib-reek`
   - Install the package using usual command
     - Use Package Control `Install Package` and search for `SublimeLinter-contrib-reek`.
