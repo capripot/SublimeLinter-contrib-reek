@@ -26,9 +26,8 @@ class Reek(RubyLinter):
     regex = r'^.+?:(?P<line>\d+): (?P<error>\w+): (?P<message>.+)$'
     tempfile_suffix = 'rb'
 
-
     def split_match(self, match):
-        """Add near detail to error dict"""
+        """Add near detail to error dict."""
 
         error = super().split_match(match)
         error['near'] = self.search_token(error['message'])
@@ -43,10 +42,10 @@ class Reek(RubyLinter):
 
         # If there's no variable name search for nil-check message
         if m is None:
-            m = re.search('nil(?=-check)', message)
+            m = re.search(r'nil(?=-check)', message)
 
         # If there's no nil-check search for method name that comes after a `#`
         if m is None:
-            m = re.search('(?<=#)\S+', message)
+            m = re.search(r'(?<=#)\S+', message)
 
         return m.group(0) if m else None
