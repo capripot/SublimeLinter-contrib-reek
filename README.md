@@ -1,25 +1,14 @@
 SublimeLinter-contrib-reek
 ================================
 
-***This is a fork, updating it to SublimeLinter v4 and reek v5***
-To install this fork:
-- make sure you don't have an installed version of `SublimeLinter-contrib-reek`
-  - if you do, _uninstall_ it with Package Control `Remove Package` command
-- use Package Control `Add Repository` command (see this [SO](https://stackoverflow.com/questions/23026201/sublime-text-3-how-to-install-plugins-from-github))
-  - add https://github.com/ppdeassis/SublimeLinter-contrib-reek
-- Now, proceed with installing the package using Package Control usual commands `Install Package`
-  - search for `SublimeLinter-contrib-reek`
-    > you should see this repo `github.com/ppdeassis/SublimeLinter-contrib-reek` on package entry's the _footnote_
-
-legacy README
-====
+***This is a fork, updated for SublimeLinter 4 and reek 5***
 
 [![Build Status](https://travis-ci.org/codequest-eu/SublimeLinter-contrib-reek.svg?branch=master)](https://travis-ci.org/codequest-eu/SublimeLinter-contrib-reek)
 
 This linter plugin for [SublimeLinter][docs] provides an interface to [reek](https://github.com/troessner/reek). It will be used with files that have the `ruby`, `ruby on rails`, `rspec`, `betterruby`, `better rspec`, `ruby experimental` or `cucumber steps` syntaxes.
 
 ## Installation
-SublimeLinter 3 must be installed in order to use this plugin. If SublimeLinter 3 is not installed, please follow the instructions [here][installation].
+SublimeLinter must be installed in order to use this plugin. If SublimeLinter is not installed, please follow [these instructions][installation].
 
 ### Linter installation
 Before using this plugin, you must ensure that `reek` is installed on your system. To install `reek`, do the following:
@@ -31,9 +20,17 @@ Before using this plugin, you must ensure that `reek` is installed on your syste
    [sudo] gem install reek
    ```
 
-1. If you are using `rbenv` or `rvm`, ensure that they are loaded in your shell’s correct startup file. See [here](http://sublimelinter.readthedocs.org/en/latest/troubleshooting.html#shell-startup-files) for more information.
+1. If you are using `rbenv` or `rvm`, ensure that they are loaded in your [shell’s correct startup file][https://sublimelinter.readthedocs.io/en/latest/troubleshooting.html].
+  **Note:** This plugin requires `reek` 5 or later.
 
-**Note:** This plugin requires `reek` 3.5.0 or later.
+1. To install this particular fork:
+  - Remove installed version of `SublimeLinter-contrib-reek`
+    - Use Package Control `Remove Package` command
+  - Add this reppo to Package Control  repositories 
+    - Use Package Control `Add Repository` command (see this [Stack Overflow][add_repo_so]): `https://github.com/capripot/SublimeLinter-contrib-reek`
+  - Install the package using usual command
+    - Use Package Control `Install Package` and search for `SublimeLinter-contrib-reek`.
+      *You should see this repo `github.com/capripot/SublimeLinter-contrib-reek` on package entry's the _footnote_*
 
 ### Linter configuration
 In order for `reek` to be executed by SublimeLinter, you must ensure that its path is available to SublimeLinter. Before going any further, please read and follow the steps in [“Finding a linter executable”](http://sublimelinter.readthedocs.org/en/latest/troubleshooting.html#finding-a-linter-executable) through “Validating your PATH” in the documentation.
@@ -58,7 +55,7 @@ By default, the linter plugin looks for a config file called `config.reek` in th
 
 ```json
 "reek": {
-    "args": ["-c", "path/to/config.reek"]
+    "args": ["-c", "path/to/config.reek.yml"]
 }
 ```
 
@@ -88,3 +85,4 @@ Thank you for helping out!
 [settings]: http://sublimelinter.readthedocs.org/en/latest/settings.html
 [linter-settings]: http://sublimelinter.readthedocs.org/en/latest/linter_settings.html
 [inline-settings]: http://sublimelinter.readthedocs.org/en/latest/settings.html#inline-settings
+[add_repo_so]: https://stackoverflow.com/questions/23026201/sublime-text-3-how-to-install-plugins-from-github
