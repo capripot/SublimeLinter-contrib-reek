@@ -1,10 +1,8 @@
-SublimeLinter-contrib-reek
--------------------------------
 This linter plugin for SublimeLinter provides an interface to reek.
 
-** IMPORTANT! **
+** IMPORTANT **
 
-Before this plugin will activate, you *must*
-follow the installation instructions here:
+To be sure the plugin works as expected,
+follow the installation instructions at
 
-https://github.com/ppdeassis/SublimeLinter-contrib-reek
+https://github.com/capripot/SublimeLinter-contrib-reek
